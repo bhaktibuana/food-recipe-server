@@ -1,0 +1,112 @@
+[
+  {
+    "recipe": "Gerson Therapy Carrot Juice",
+    "order_number": 1,
+    "description": "Wash the carrots."
+  },
+  {
+    "recipe": "Gerson Therapy Carrot Juice",
+    "order_number": 2,
+    "description": "Cut the tops and bottoms off of the carrots."
+  },
+  {
+    "recipe": "Gerson Therapy Carrot Juice",
+    "order_number": 3,
+    "description": "Grind and press."
+  },
+  {
+    "recipe": "Sweet Pea Microgreen Smoothie",
+    "order_number": 1,
+    "description": "Cold press the oranges to make the orange juice ingredient."
+  },
+  {
+    "recipe": "Sweet Pea Microgreen Smoothie",
+    "order_number": 2,
+    "description": "Peel and deseed the avocado."
+  },
+  {
+    "recipe": "Sweet Pea Microgreen Smoothie",
+    "order_number": 3,
+    "description": "Add all of the ingredients to a high-speed blender and blend until smooth, about 1 minute."
+  },
+  {
+    "recipe": "Shrimp, Avocado, and Egg Chopped Salad",
+    "order_number": 1,
+    "description": "In a large bowl, toss onion with lime juice and ½ tablespoon oil and let sit for 5 minutes."
+  },
+  {
+    "recipe": "Shrimp, Avocado, and Egg Chopped Salad",
+    "order_number": 2,
+    "description": "Heat 1/2 tablespoon oil in a large skillet on medium high. Season shrimp with 1/4 teaspoon each salt and pepper and cook until opaque throughout, 2 to 3 minutes per side."
+  },
+  {
+    "recipe": "Shrimp, Avocado, and Egg Chopped Salad",
+    "order_number": 3,
+    "description": "Toss tomatoes with onions, then toss with lettuce and cilantro. Divide among bowls and top with shrimp, avocado and egg."
+  },
+  {
+    "recipe": "Vanilla Berry Smoothie Bowl",
+    "order_number": 1,
+    "description": "Place the berries, banana, almond milk, Greek yogurt, and protein concentrate in the blender and blend until a thick and smooth mixture forms. You may need to add a bit more of the milk to thin to desired consistency."
+  },
+  {
+    "recipe": "Vanilla Berry Smoothie Bowl",
+    "order_number": 2,
+    "description": "Taste and add sweetener if desired."
+  },
+  {
+    "recipe": "Vanilla Berry Smoothie Bowl",
+    "order_number": 3,
+    "description": "Divide the smoothie evenly between two bowls and top with fresh berries and granola. Serve immediately."
+  },
+  {
+    "recipe": "Avocado Toast",
+    "order_number": 1,
+    "description": "In a small bowl, combine avocado, lemon juice, salt, and pepper. Gently mash with the back of a fork."
+  },
+  {
+    "recipe": "Avocado Toast",
+    "order_number": 2,
+    "description": "Top toasted bread with mashed avocado mixture. Drizzle with olive oil and sprinkle over desired toppings."
+  },
+  {
+    "recipe": "Herb Omelette with Fried Tomatoes",
+    "order_number": 1,
+    "description": "Heat the oil in a small non-stick frying pan, then cook the tomatoes cut-side down until starting to soften and colour. Meanwhile, beat the eggs with the herbs and plenty of freshly ground black pepper in a small bowl."
+  },
+  {
+    "recipe": "Herb Omelette with Fried Tomatoes",
+    "order_number": 2,
+    "description": "Scoop the tomatoes from the pan and put them on two serving plates. Pour the egg mixture into the pan and stir gently with a wooden spoon so the egg that sets on the base of the pan moves to enable uncooked egg to flow into the space. Stop stirring when it’s nearly cooked to allow it to set into an omelette. Cut into four and serve with the tomatoes."
+  },
+  {
+    "recipe": "Clam Chowder",
+    "order_number": 1,
+    "description": "Mix cream of celery soup, cream of potato soup, clam chowder, 1 can undrained clams, 1 can drained clams, half-and-half cream, and whipping cream into a slow cooker."
+  },
+  {
+    "recipe": "Clam Chowder",
+    "order_number": 2,
+    "description": "Cover, and cook on low for 6 to 8 hours."
+  },
+  {
+    "recipe": "Fettuccine Alfredo",
+    "order_number": 1,
+    "description": "Bring a large pot of salted water to a boil. Add the cauliflower and boil until the cauliflower is fork tender, 8 to 10 minutes. Drain and place the cauliflower in a blender. Add the Parmesan cheese, olive oil, garlic, mustard, butter, lemon juice, salt, and several grinds of pepper."
+  },
+  {
+    "recipe": "Fettuccine Alfredo",
+    "order_number": 2,
+    "description": "Cook the pasta in a large pot of salted boiling water according to package directions or until al dente. Drain the pasta, reserving 1½ cups of the starchy pasta water. Add 1 cup of the pasta water to the blender and blend the sauce until creamy."
+  },
+  {
+    "recipe": "Fettuccine Alfredo",
+    "order_number": 3,
+    "description": "Transfer the pasta to a large bowl or skillet. Add the sauce and toss to coat. If the sauce is too thick, add the remaining ½ cup pasta water and toss again to loosen the sauce and make it a bit creamier."
+  },
+  {
+    "recipe": "Fettuccine Alfredo",
+    "order_number": 4,
+    "description": "Sprinkle with parsley and season to taste. Serve with grated cheese on the side."
+  }
+]

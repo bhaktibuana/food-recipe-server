@@ -1,0 +1,42 @@
+[
+  {
+    "recipe": "Sweet Pea Microgreen Smoothie",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Gerson Therapy Carrot Juice",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Vanilla Berry Smoothie Bowl",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Shrimp, Avocado, and Egg Chopped Salad",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Fettuccine Alfredo",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Clam Chowder",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Herb Omelette with Fried Tomatoes",
+    "user": "Admin",
+    "rating": 5
+  },
+  {
+    "recipe": "Avocado Toast",
+    "user": "Admin",
+    "rating": 5
+  }
+]

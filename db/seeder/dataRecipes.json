@@ -1,0 +1,74 @@
+[
+  {
+    "user": "Admin",
+    "category": "Beverages",
+    "name": "Gerson Therapy Carrot Juice",
+    "description": "Organic, fresh-pressed carrot juice is one of the main recipes used in the cancer-fighting Gerson Therapy diet.",
+    "cooking_time": 300,
+    "calories": 67,
+    "image_url": "/images/gerson_carrot_juice.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Beverages",
+    "name": "Sweet Pea Microgreen Smoothie",
+    "description": "This tasty green smoothie is packed with an amazing amount of nutrients courtesy of its star ingredient, sweet pea microgreens.",
+    "cooking_time": 420,
+    "calories": 240,
+    "image_url": "/images/sweet_pea_microgreen_smoothie.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Healthy",
+    "name": "Shrimp, Avocado, and Egg Chopped Salad",
+    "description": "Shrimp is high in protein and low in calories, making it an ideal alternative to beef and chicken.",
+    "cooking_time": 600,
+    "calories": 365,
+    "image_url": "/images/shrimp_avocado_and_egg_chopped_salad.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Healthy",
+    "name": "Vanilla Berry Smoothie Bowl",
+    "description": "Thick and creamy berry protein smoothies served in a bowl, topped with fresh fruit and granola.",
+    "cooking_time": 400,
+    "calories": 402,
+    "image_url": "/images/vanilla_berry_smoothie_bowl.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Breakfast",
+    "name": "Avocado Toast",
+    "description": "Mashed avocado spread over crusty whole-wheat bread, finished with olive oil, red pepper flakes, and flaky sea salt—does it get much better than that?",
+    "cooking_time": 300,
+    "calories": 200,
+    "image_url": "/images/avocado_toast.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Breakfast",
+    "name": "Herb Omelette with Fried Tomatoes",
+    "description": "Omelette Vegetables are foods that are simply prepared and can be prepared for breakfast and enjoy it.",
+    "cooking_time": 300,
+    "calories": 204,
+    "image_url": "/images/herb_omelette_with_fried_tomatoes.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Main Dishes",
+    "name": "Clam Chowder",
+    "description": "Clam chowder is easier to make than you think – and the homemade version is unbelievably creamy, flavourful and chockfull of clams.",
+    "cooking_time": 300,
+    "calories": 425,
+    "image_url": "/images/clam_chowder.jpg"
+  },
+  {
+    "user": "Admin",
+    "category": "Main Dishes",
+    "name": "Fettuccine Alfredo",
+    "description": "Fettuccine Alfredo is perfect for any and all occasions, from busy weeknights to romantic dinners.  It's simple, elegant, and totally delicious.",
+    "cooking_time": 300,
+    "calories": 415,
+    "image_url": "/images/fettuccine_alfredo.jpg"
+  }
+]
