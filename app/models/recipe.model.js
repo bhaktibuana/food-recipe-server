@@ -25,10 +25,16 @@ const selectById = (params, callback) => {
   db.query(selectQuery, params, callback);
 };
 
+const create = (params, callback) => {
+  const insertQuery = `INSERT INTO recipes (user_id, category_id, name, description, cooking_time, calories, image_url) VALUES (?, ?, ?, ?, ?, ?, ?);`;
+  db.query(insertQuery, params, callback);
+};
+
 module.exports = {
   countAll,
   selectAll,
   countByCategory,
   selectByCategory,
   selectById,
+  create,
 };
