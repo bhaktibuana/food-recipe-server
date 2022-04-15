@@ -1,7 +1,7 @@
 const db = require("../../config/dbConnection");
 
 let queryCount = 0;
-const totalQuery = 7;
+const totalQuery = 6;
 
 const createUsersQuery = `
   CREATE TABLE IF NOT EXISTS users (
@@ -132,29 +132,6 @@ db.query(createRatingQuery, (error, results) => {
   if (error) throw new Error(error);
 
   console.log("Table rating created!");
-  queryCount += 1;
-  if (queryCount === totalQuery) process.exit(0);
-});
-
-const createCommentsQuery = `
-  CREATE TABLE IF NOT EXISTS comments (
-    id INT NOT NULL AUTO_INCREMENT,
-    recipe_id INT NOT NULL,
-    user_id INT NOT NULL,
-    comment TEXT NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    is_deleted BOOLEAN NOT NULL DEFAULT false,
-    PRIMARY KEY (id),
-    FOREIGN KEY (recipe_id) REFERENCES recipes (id),
-    FOREIGN KEY (user_id) REFERENCES users (id)
-  );
-`;
-
-db.query(createCommentsQuery, (error, results) => {
-  if (error) throw new Error(error);
-
-  console.log("Table comments created!");
   queryCount += 1;
   if (queryCount === totalQuery) process.exit(0);
 });
