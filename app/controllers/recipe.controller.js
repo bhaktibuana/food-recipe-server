@@ -1,6 +1,7 @@
 const recipeModel = require("../models/recipe.model");
 const ingredientModel = require("../models/ingredient.model");
 const stepModel = require("../models/step.model");
+const categoryModel = require("../models/category.model");
 
 const getAllRecipes = (req, res) => {
   const offset = parseInt(req.query.offset);
@@ -21,12 +22,6 @@ const getAllRecipes = (req, res) => {
           if (error) {
             res.status(500).json(error);
           } else {
-            for (let i in results) {
-              results[i].image_url = `${req.protocol}://${req.get("host")}${
-                results[i].image_url
-              }`;
-            }
-
             res.status(200).json({
               count: count,
               next:
@@ -81,12 +76,6 @@ const getRecipesByCategory = (category, req, res) => {
             if (error) {
               res.status(500).json(error);
             } else {
-              for (let i in results) {
-                results[i].image_url = `${req.protocol}://${req.get("host")}${
-                  results[i].image_url
-                }`;
-              }
-
               res.status(200).json({
                 count: count,
                 next:
@@ -149,7 +138,127 @@ const getRecipeById = (id, req, res) => {
   });
 };
 
+const createRecipe = (req, res) => {
+  const userId = res.locals.payload.id;
+  const params = {
+    category: req.body.category,
+    name: req.body.name,
+    description: req.body.description,
+    cooking_time: req.body.cooking_time,
+    calories: req.body.calories,
+    image_url: req.body.image_url,
+    ingredients: JSON.parse(req.body.ingredients),
+    steps: JSON.parse(req.body.steps),
+  };
+
+  categoryModel.selectByName([params.category], (error, results) => {
+    if (error) {
+      res.status(500).json(error);
+    } else {
+      if (results.length === 0) {
+        createCategory(req, res, (categoryId) => {
+          recipeModel.create(
+            [
+              userId,
+              categoryId,
+              params.name,
+              params.description,
+              params.cooking_time,
+              params.calories,
+              params.image_url,
+            ],
+            (error, results) => {
+              if (error) {
+                res.status(500).json(error);
+              } else {
+                createIngredients(req, res, results.insertId);
+              }
+            }
+          );
+        });
+      } else {
+        recipeModel.create(
+          [
+            userId,
+            results[0].id,
+            params.name,
+            params.description,
+            params.cooking_time,
+            params.calories,
+            params.image_url,
+          ],
+          (error, results) => {
+            if (error) {
+              res.status(500).json(error);
+            } else {
+              createIngredients(req, res, results.insertId);
+            }
+          }
+        );
+      }
+    }
+  });
+};
+
+const createCategory = (req, res, callback) => {
+  const category = req.body.category;
+
+  categoryModel.create([category], (error, results) => {
+    if (error) {
+      res.status(500).json(error);
+    } else {
+      callback(results.insertId);
+    }
+  });
+};
+
+const createIngredients = (req, res, recipeId) => {
+  const ingredients = JSON.parse(req.body.ingredients);
+
+  let count = 0;
+
+  ingredients.forEach((ingredient, index, array) => {
+    ingredientModel.create([recipeId, ingredient.name], (error, results) => {
+      if (error) {
+        res.status(500).json(error);
+      }
+
+      count += 1;
+
+      if (count === array.length) {
+        createSteps(req, res, recipeId);
+      }
+    });
+  });
+};
+
+const createSteps = (req, res, recipeId) => {
+  const steps = JSON.parse(req.body.steps);
+
+  let count = 0;
+
+  steps.forEach((step, index, array) => {
+    stepModel.create(
+      [recipeId, step.order_number, step.description],
+      (error, results) => {
+        if (error) {
+          res.status(500).json(error);
+        }
+
+        count += 1;
+
+        if (count === array.length) {
+          res.status(200).json({
+            message: "Recipe created.",
+          });
+        }
+      }
+    );
+  });
+};
+
 module.exports = {
   getAllRecipes,
   getByParams,
+  createRecipe,
 };

@@ -210,6 +210,94 @@ _Response:_ JSON
 </p>
 </details>
 
+<details>
+<summary><b>Create recipe</b></summary>
+
+<p>
+
+`POST` `/recipe`
+
+_Authorization:_ Bearer Token
+
+- `token` access token \*required
+
+_Parameters:_ body
+
+- `category` string \*required
+- `name` string, max:50 \*required
+- `description` string \*required
+- `cooking_time` integer \*required
+- `calories` integer \*required
+- `image_url` string \*required
+- `ingredients` JSON \*required
+
+```json
+[
+  {
+    "name": "string"
+  }
+]
+```
+
+- `steps` JSON \*required
+
+```json
+[
+  {
+    "order_number": "integer",
+    "description": "string"
+  }
+]
+```
+
+_Response:_ JSON
+
+- `status: 200` create recupe success
+
+```json
+{
+  "message": "Recipe created."
+}
+```
+
+- `status: 401` unauthorized
+
+```json
+{
+  "message": "Unauthorized."
+}
+```
+
+- `status: 400` wrong authorization format
+
+```json
+{
+  "auth": false,
+  "message": "Wrong authorization format."
+}
+```
+
+- `status: 401` token expired
+
+```json
+{
+  "auth": false,
+  "message": "Token expired."
+}
+```
+
+- `status: 401` authorization failed
+
+```json
+{
+  "auth": false,
+  "message": "Invalid Token."
+}
+```
+
+</p>
+</details>
+
 ### Auth
 
 <details>
@@ -295,3 +383,179 @@ _Response:_ JSON
 
 </p>
 </details>
+
+### Rating
+
+<details>
+<summary><b>Get rating by recipe id</b></summary>
+
+<p>
+
+`GET` `/rating/recipe/{recipe_id}`
+
+_Parameters:_ path
+
+- `recipe_id` integer \*required
+
+_Response:_ JSON
+
+- `status: 200` get rating success
+
+```json
+{
+  "total_vote": "integer",
+  "rating": "float"
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary><b>Get rating by user id</b></summary>
+
+<p>
+
+`GET` `/rating/user/{recipe_id}`
+
+_Authorization:_ Bearer Token
+
+- `token` access token \*required
+
+_Parameters:_ path, query
+
+- `recipe_id` integer \*required (path)
+- `user_id` integer \*required (query)
+
+_Response:_ JSON
+
+- `status: 200` get rating success
+
+```json
+{
+  "rating": "integer"
+}
+```
+
+- `status: 401` unauthorized
+
+```json
+{
+  "message": "Unauthorized."
+}
+```
+
+- `status: 400` wrong authorization format
+
+```json
+{
+  "auth": false,
+  "message": "Wrong authorization format."
+}
+```
+
+- `status: 401` token expired
+
+```json
+{
+  "auth": false,
+  "message": "Token expired."
+}
+```
+
+- `status: 401` authorization failed
+
+```json
+{
+  "auth": false,
+  "message": "Invalid Token."
+}
+```
+
+</p>
+</details>
+
+<details>
+<summary><b>Create and update rating</b></summary>
+
+<p>
+
+`POST` `/rating/{recipe_id}`
+
+_Authorization:_ Bearer Token
+
+- `token` access token \*required
+
+_Parameters:_ path, body
+
+- `recipe_id` integer \*required (path)
+- `user_id` integer \*required (body)
+- `rating` integer, range(1 - 5) \*required (body)
+
+_Response:_ JSON
+
+- `status: 200` create rating success
+
+```json
+{
+  "message": "Rating created successfully"
+}
+```
+
+- `status: 200` update rating success
+
+```json
+{
+  "message": "Rating updated successfully"
+}
+```
+
+- `status: 400` invalid rating range
+
+```json
+{
+  "message": "Rating must be between 1 and 5"
+}
+```
+
+- `status: 401` unauthorized
+
+```json
+{
+  "message": "Unauthorized."
+}
+```
+
+- `status: 400` wrong authorization format
+
+```json
+{
+  "auth": false,
+  "message": "Wrong authorization format."
+}
+```
+
+- `status: 401` token expired
+
+```json
+{
+  "auth": false,
+  "message": "Token expired."
+}
+```
+
+- `status: 401` authorization failed
+
+```json
+{
+  "auth": false,
+  "message": "Invalid Token."
+}
+```
+
+</p>
+</details>
+
+To see the response you can do API testing using an application like [Postman](https://www.postman.com/).
+
+I hope you guys like this project and ENJOY!!! :grin:
