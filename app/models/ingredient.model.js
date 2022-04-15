@@ -5,6 +5,12 @@ const selectByRecipeId = (params, callback) => {
   db.query(selectQuery, params, callback);
 };
 
+const create = (params, callback) => {
+  const insertQuery = `INSERT INTO ingredients (recipe_id, name) VALUES (?, ?);`;
+  db.query(insertQuery, params, callback);
+};
+
 module.exports = {
   selectByRecipeId,
+  create,
 };
