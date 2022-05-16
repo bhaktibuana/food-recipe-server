@@ -177,6 +177,7 @@ _Response:_ JSON
   "username": "string",
   "category": "string",
   "name": "string",
+  "description": "string",
   "cooking_time": "integer",
   "calories": "integer",
   "rating": "float",
@@ -422,10 +423,9 @@ _Authorization:_ Bearer Token
 
 - `token` access token \*required
 
-_Parameters:_ path, query
+_Parameters:_ path
 
 - `recipe_id` integer \*required (path)
-- `user_id` integer \*required (query)
 
 _Response:_ JSON
 
@@ -489,7 +489,6 @@ _Authorization:_ Bearer Token
 _Parameters:_ path, body
 
 - `recipe_id` integer \*required (path)
-- `user_id` integer \*required (body)
 - `rating` integer, range(1 - 5) \*required (body)
 
 _Response:_ JSON
