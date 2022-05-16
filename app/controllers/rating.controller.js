@@ -32,7 +32,7 @@ const getRatingByRecipe = (req, res) => {
 
 const getRatingByUser = (req, res) => {
   const recipeId = req.params.recipe_id;
-  const userId = req.query.user_id;
+  const userId = res.locals.payload.id;
 
   ratingModel.getByUser([recipeId, userId], (error, results) => {
     if (error) {
@@ -53,7 +53,7 @@ const getRatingByUser = (req, res) => {
 
 const createAndUpdateRating = (req, res) => {
   const recipeId = req.params.recipe_id;
-  const userId = req.body.user_id;
+  const userId = res.locals.payload.id;
   const rating = req.body.rating;
 
   ratingModel.getByUser([recipeId, userId], (error, results) => {
