@@ -1,12 +1,5 @@
 const mysql = require("mysql");
 
-// const db = mysql.createPool({
-//   host: "localhost", // "localhost" by default
-//   user: "root", // "root" by default
-//   password: "1pV7DJcm2W",
-//   database: "foodrecipe",
-// });
-
 const db = mysql.createPool({
   host: "us-cdbr-east-05.cleardb.net", // "localhost" by default
   user: "b1dca192047f52", // "root" by default
