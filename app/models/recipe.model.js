@@ -6,7 +6,7 @@ const countAll = (callback) => {
 };
 
 const selectAll = (params, callback) => {
-  const selectQuery = `SELECT re.id, ca.name AS category, re.name, re.cooking_time, re.calories, (SELECT AVG(rating) FROM rating WHERE recipe_id = re.id AND is_deleted = FALSE) AS rating, re.image_url FROM recipes AS re JOIN categories AS ca ON re.category_id = ca.id WHERE re.is_deleted = FALSE ORDER BY re.id ASC LIMIT ?, ?;`;
+  const selectQuery = `SELECT re.id, ca.name AS category, re.name, re.cooking_time, re.calories, (SELECT AVG(rating) FROM rating WHERE recipe_id = re.id AND is_deleted = FALSE) AS rating, re.image_url FROM recipes AS re JOIN categories AS ca ON re.category_id = ca.id WHERE re.is_deleted = FALSE ORDER BY re.id DESC LIMIT ?, ?;`;
   db.query(selectQuery, params, callback);
 };
 
@@ -16,7 +16,7 @@ const countByCategory = (params, callback) => {
 };
 
 const selectByCategory = (params, callback) => {
-  const selectQuery = `SELECT re.id, ca.name AS category, re.name, re.cooking_time, re.calories, (SELECT AVG(rating) FROM rating WHERE recipe_id = re.id AND is_deleted = FALSE) AS rating, re.image_url FROM recipes AS re JOIN categories AS ca ON re.category_id = ca.id WHERE re.is_deleted = FALSE AND ca.name = ? ORDER BY re.id ASC LIMIT ?, ?;`;
+  const selectQuery = `SELECT re.id, ca.name AS category, re.name, re.cooking_time, re.calories, (SELECT AVG(rating) FROM rating WHERE recipe_id = re.id AND is_deleted = FALSE) AS rating, re.image_url FROM recipes AS re JOIN categories AS ca ON re.category_id = ca.id WHERE re.is_deleted = FALSE AND ca.name = ? ORDER BY re.id DESC LIMIT ?, ?;`;
   db.query(selectQuery, params, callback);
 };
 
