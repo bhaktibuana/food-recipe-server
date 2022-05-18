@@ -249,6 +249,7 @@ const createSteps = (req, res, recipeId) => {
 
         if (count === array.length) {
           res.status(200).json({
+            recipe_id: recipeId,
             message: "Recipe created.",
           });
         }
